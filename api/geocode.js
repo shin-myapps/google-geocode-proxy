@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Invalid or missing latitude/longitude" });
     }
 
-    const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+    const apiKey = process.env.GOOGLE_API_KEY;
     const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lon}&key=${apiKey}`;
 
     const response = await fetch(url);
